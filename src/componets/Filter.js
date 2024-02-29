@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import clientsJson from "../clients.json";
+import Table from "./Table.js";
 
 function Filter(){
 
@@ -23,24 +24,8 @@ function Filter(){
 
             <input className="w-25 mt-3" onChange={handleInputText}></input>
 
-            <table className='table w-75 m-auto mt-4 mb-5'>
-                <thead>
-                    <tr>
-                        <th scope="col">NAME</th>
-                        <th scope="col">USERNAME</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        filterClientsJson.map(client => 
-                        <tr>
-                            <td>{client.name}</td>
-                            <td>{client.username}</td>
-                        </tr>)
-                    }
-                </tbody>
-
-            </table>
+            <Table clients={filterClientsJson}/>
+            
         </div>
     );
 }
