@@ -11,8 +11,8 @@ function Table( {clients} ){
                 </thead>
                 <tbody>
                     {
-                        clients.map(client => 
-                        <tr>
+                        clients.map((client,index) => 
+                        <tr key={index}>
                             <td>{client.name}</td>
                             <td>{client.username}</td>
                         </tr>)
