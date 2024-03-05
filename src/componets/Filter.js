@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import clientsJson from "../clients.json";
+import json from "../clients.json";
 import Table from "./Table.js";
 import AddUser from "./AddUser.js";
 
@@ -13,6 +13,8 @@ function Filter(){
         setStateAddUserMenu(!stateAddUserMenu)
     }
 
+    const [clientsJson,setClientsJson] = useState(json)
+
     const [filterClientsJson, setFilterClientsJson] = useState([{}])
 
     const handleInputText = (e) => {
@@ -21,7 +23,7 @@ function Filter(){
 
     const searchUserName = (client) => {
         const newFilterClientsJson = clientsJson.filter(clientFilter => clientFilter.username === client.username)
-        console.log(newFilterClientsJson)
+
         if(newFilterClientsJson.length === 0) 
             return false
         else 
@@ -29,12 +31,16 @@ function Filter(){
     }
 
     const addClient = (client) => {
-         //se pierde la info con el useEffect, tengo que guardaro en el clientes.json
-        clientsJson = [client,...clientsJson]
-        
+        setClientsJson([client,...clientsJson])
+    }
+
+    const deleteClient = (userName) => {
+        setClientsJson(clientsJson.filter(client => client.username !== userName)) //Remove client
+        console.log(clientsJson)
     }
 
     useEffect(() => {
+        console.log("actualiza")
         setFilterClientsJson(clientsJson.filter(client => 
             client.name.toLowerCase().includes(inputText.toLowerCase()) || 
             client.username.toLowerCase().includes(inputText.toLowerCase()))
@@ -57,7 +63,9 @@ function Filter(){
                 addClient={addClient}
             />
 
-            <Table clients={filterClientsJson}/>
+            <Table 
+                clients={filterClientsJson}
+                deleteClient={deleteClient}/>
             
         </div>
     );
