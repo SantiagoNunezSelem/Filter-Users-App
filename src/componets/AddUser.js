@@ -56,11 +56,13 @@ function AddUser({state,handleStateAddUserMenu,searchUserName,addClient}){
                         <div className="card position-absolute top-50 start-50 translate-middle">
                             
                             <div className="position-absolute d-flex justify-content-end mt-2" style={{width:"97%"}}> 
-                                <a onClick={handleStateAddUserMenu}><i className="bi bi-x-lg"></i></a> {/*Exit Icon*/}
+                                <a className="text-secondary" href="#" onClick={handleStateAddUserMenu}>
+                                    <i className="bi bi-x-lg"></i>{/*Exit Icon*/}
+                                </a> 
                             </div>
 
                             <form onSubmit={handleSubmit} className="row">
-                                <div className="row d-flex g-3 align-items-center justify-content-center">
+                                <div className="row d-flex g-3 align-items-center justify-content-center mb-2">
                                     <div className="col-md-5">
                                         <label for="inputName" className="form-label">Name</label>
                                         <input 
@@ -73,6 +75,7 @@ function AddUser({state,handleStateAddUserMenu,searchUserName,addClient}){
                                             style={{ border: "1px solid black" }}
                                         />
                                     </div>
+                                    
                                     <div className="col-md-5">
                                         <label for="inputUserName" className="form-label">UserName</label>
                                         <input 
@@ -86,17 +89,17 @@ function AddUser({state,handleStateAddUserMenu,searchUserName,addClient}){
                                             style={{ border: "1px solid black" }}
                                         />
                                         {formDataUserName !== "" &&
-                                            <div className={`position-absolute ${stateErrorMessage ? "text-danger" : "text-success"}`}>
+                                            <div className={`position-absolute mt-1 ${stateErrorMessage ? "text-danger" : "text-success"}`} style={{fontSize:"15px"}}>
                                                 {errorMessage}
                                             </div>
-
                                         }
                                     </div>
                                 </div>
                                 
                                 <div className="col-12 mt-4 mb-4">
-                                    <button type="submit" className="btn btn-primary">save</button>
+                                    <button type="submit" className="btn btn-primary fs-5">Save</button>
                                 </div>
+
                             </form>
                         </div>
                     </div>
