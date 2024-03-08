@@ -71,6 +71,7 @@ function AddUser({state,handleStateAddUserMenu,searchUserName,addClient}){
                                             id="inputName"
                                             value={formDataName}
                                             autoComplete="off"
+                                            maxlength="20"
                                             required 
                                             style={{ border: "1px solid black" }}
                                         />
@@ -85,6 +86,7 @@ function AddUser({state,handleStateAddUserMenu,searchUserName,addClient}){
                                             id="inputUserName"
                                             value={formDataUserName}
                                             autoComplete="off"
+                                            maxlength="20"
                                             required 
                                             style={{ border: "1px solid black" }}
                                         />
