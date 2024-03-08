@@ -15,4 +15,17 @@ tr:hover i{
 
 /* */
 
+.table {
+  width: 80%;
+}
+
+.tabletbody td{
+  min-width: 0%;
+  width: auto;
+}
+
+#trash-column {
+  width: 1%;
+}
+
 
