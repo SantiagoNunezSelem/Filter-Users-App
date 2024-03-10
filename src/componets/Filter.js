@@ -50,7 +50,7 @@ function Filter(){
     return(
         <div className="w-100">
             <div className="container d-flex align-items-center justify-content-center mt-3">
-                <input className="w-25 " onChange={handleInputText}></input>
+                <input className="filter-input" onChange={handleInputText}></input>
                 <button type="button" className="btn btn-secondary ms-2" onClick={handleStateAddUserMenu}>
                     <i className="bi bi-person-plus"></i>
                 </button>

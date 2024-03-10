@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.filter-input {
+  width:280px;
+}
+
 /* Trash Icon Animation */
 
 tr i{
@@ -14,6 +18,14 @@ tr:hover i{
 }
 
 /* */
+
+@media(max-width:900px) {
+  
+
+  tr i {
+    opacity:1; /* Trash Icon no animation */
+  }
+}
 
 .table {
   width: 80%;

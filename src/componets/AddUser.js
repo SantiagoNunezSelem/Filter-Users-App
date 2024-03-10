@@ -61,9 +61,9 @@ function AddUser({state,handleStateAddUserMenu,searchUserName,addClient}){
                                 </a> 
                             </div>
 
-                            <form onSubmit={handleSubmit} className="row">
-                                <div className="row d-flex g-3 align-items-center justify-content-center mb-2">
-                                    <div className="col-md-5">
+                            <form onSubmit={handleSubmit} className="row d-flex g-3 align-items-center justify-content-center m-2">
+
+                                    <div className="col-md-5" style={{minWidth:"200px"}}>
                                         <label for="inputName" className="form-label">Name</label>
                                         <input 
                                             onChange={ev => setFormDataName(ev.target.value)} 
@@ -73,11 +73,11 @@ function AddUser({state,handleStateAddUserMenu,searchUserName,addClient}){
                                             autoComplete="off"
                                             maxlength="20"
                                             required 
-                                            style={{ border: "1px solid black" }}
+                                            style={{ border: "1px solid black"}}
                                         />
                                     </div>
                                     
-                                    <div className="col-md-5">
+                                    <div className="col-md-5" style={{minWidth:"200px"}}>
                                         <label for="inputUserName" className="form-label">UserName</label>
                                         <input 
                                             onChange={ev => setFormDataUserName(ev.target.value)} 
@@ -88,7 +88,7 @@ function AddUser({state,handleStateAddUserMenu,searchUserName,addClient}){
                                             autoComplete="off"
                                             maxlength="20"
                                             required 
-                                            style={{ border: "1px solid black" }}
+                                            style={{ border: "1px solid black"}}
                                         />
                                         {formDataUserName !== "" &&
                                             <div className={`position-absolute mt-1 ${stateErrorMessage ? "text-danger" : "text-success"}`} style={{fontSize:"15px"}}>
@@ -96,9 +96,8 @@ function AddUser({state,handleStateAddUserMenu,searchUserName,addClient}){
                                             </div>
                                         }
                                     </div>
-                                </div>
                                 
-                                <div className="col-12 mt-4 mb-4">
+                                <div className="col-12 mt-4 mb-3" style={{maxWidth:"200px"}}>
                                     <button type="submit" className="btn btn-primary fs-5">Save</button>
                                 </div>
 
