@@ -91,13 +91,13 @@ function AddUser({state,handleStateAddUserMenu,searchUserName,addClient}){
                                             style={{ border: "1px solid black"}}
                                         />
                                         {formDataUserName !== "" &&
-                                            <div className={`position-absolute mt-1 ${stateErrorMessage ? "text-danger" : "text-success"}`} style={{fontSize:"15px"}}>
+                                            <div className={`error-message ${stateErrorMessage ? "text-danger" : "text-success"}`} style={{fontSize:"15px"}}>
                                                 {errorMessage}
                                             </div>
                                         }
                                     </div>
                                 
-                                <div className="col-12 mt-4 mb-3" style={{maxWidth:"200px"}}>
+                                <div className={`col-12 mb-3 ${formDataUserName !== "" ? "mt-1" : "mt-4"}`} style={{maxWidth:"200px"}}>
                                     <button type="submit" className="btn btn-primary fs-5">Save</button>
                                 </div>
 
